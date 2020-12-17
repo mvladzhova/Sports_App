@@ -1,0 +1,274 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/zsports_ml1_srv/$metadata"><edmx:Include Namespace="ZSPORTS_ML1_SRV" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="zsports_ml1_anno_mdl.v1">
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/DraftUUID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/DraftEntityType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/DraftAccessType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/ProcessingStartDateTime"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/DraftIsKeptByUser"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/EnqueueStartDateTime"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/DraftIsCreatedByMe"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/DraftIsLastChangedByMe"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/DraftIsProcessedByMe"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/CreatedByUserDescription"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/LastChangedByUserDescription"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.I_DraftAdministrativeDataType/InProcessByUserDescription"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type/HasDraftEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type/ActiveUUID"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type/DraftEntityCreationDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type/DraftEntityLastChangeDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type/HasActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type/IsActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type/Preparation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type/Validation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_COACH_ML1Type">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet"><PropertyValue Property="Label" String="General Information"/><PropertyValue Property="ID" String="GeneralInfo"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Coach Info"/><PropertyValue Property="ID" String="CoachInfo"/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#basic"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="basic">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Coach Number"/><PropertyValue Property="Value" Path="coach_no"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="COach Name"/><PropertyValue Property="Value" Path="name"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="The Coach Consumption View"/>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Label" String="Coach"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Coach Number"/><PropertyValue Property="Value" Path="coach_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Coach Name"/><PropertyValue Property="Value" Path="name"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type/HasDraftEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type/ActiveUUID"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type/DraftEntityCreationDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type/DraftEntityLastChangeDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type/HasActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type/IsActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type/Preparation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type/Validation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_LEAGUE_ML1Type">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet"><PropertyValue Property="Label" String="General Information"/><PropertyValue Property="ID" String="GeneralInfo"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="League Info"/><PropertyValue Property="ID" String="LeagueInfo"/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#basic"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Teams"/><PropertyValue Property="ID" String="teams"/><PropertyValue Property="Target" AnnotationPath="to_zteam/@UI.LineItem"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="basic">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="League Number"/><PropertyValue Property="Value" Path="league_no"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="League Name"/><PropertyValue Property="Value" Path="name"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="The League Consumption View"/>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Label" String="League"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="League Number"/><PropertyValue Property="Value" Path="league_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="League Name"/><PropertyValue Property="Value" Path="name"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type/HasDraftEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type/ActiveUUID"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type/DraftEntityCreationDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type/DraftEntityLastChangeDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type/HasActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type/IsActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type/Preparation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type/Validation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_PLAYER_ML1Type">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet"><PropertyValue Property="Label" String="General Information"/><PropertyValue Property="ID" String="GeneralInfo"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Player Info"/><PropertyValue Property="ID" String="PlayerInfo"/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#basic"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="basic">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Player Number"/><PropertyValue Property="Value" Path="player_no"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Player Name"/><PropertyValue Property="Value" Path="name"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="The Player Consumption View"/>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Label" String="Player"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Player Number"/><PropertyValue Property="Value" Path="player_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Player Name"/><PropertyValue Property="Value" Path="name"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/HasDraftEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/ActiveUUID"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/DraftEntityCreationDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/DraftEntityLastChangeDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/HasActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/IsActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/Activation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/Edit_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/Preparation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type/Validation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_SPORT_Ml1Type">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet"><PropertyValue Property="Label" String="General Information"/><PropertyValue Property="ID" String="GeneralInfo"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Sport Info"/><PropertyValue Property="ID" String="SportInfo"/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#basic"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Leagues"/><PropertyValue Property="ID" String="leagues"/><PropertyValue Property="Target" AnnotationPath="to_zleague/@UI.LineItem"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="basic">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Sport Number"/><PropertyValue Property="Value" Path="sport_no"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Sport Name"/><PropertyValue Property="Value" Path="name"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="The Sport Consumption View"/>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Label" String="Sport"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Sport Number"/><PropertyValue Property="Value" Path="sport_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Sport Name"/><PropertyValue Property="Value" Path="name"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type/HasDraftEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type/ActiveUUID"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type/DraftEntityCreationDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type/DraftEntityLastChangeDateTime"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type/HasActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type/IsActiveEntity"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type/Preparation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type/Validation_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZSPORTS_ML1_SRV.Z_C_TEAMS_ML1Type">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet"><PropertyValue Property="Label" String="General Information"/><PropertyValue Property="ID" String="GeneralInfo"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Team Info"/><PropertyValue Property="ID" String="TeamInfo"/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#basic"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Players"/><PropertyValue Property="ID" String="player"/><PropertyValue Property="Target" AnnotationPath="to_zplayer/@UI.LineItem"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Coaches"/><PropertyValue Property="ID" String="coaches"/><PropertyValue Property="Target" AnnotationPath="to_zcoach/@UI.LineItem"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="basic">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Team Number"/><PropertyValue Property="Value" Path="team_no"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Team Name"/><PropertyValue Property="Value" Path="name"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="The Team Consumption View"/>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Label" String="Team"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Team Number"/><PropertyValue Property="Value" Path="team_no"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Team Name"/><PropertyValue Property="Value" Path="name"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
